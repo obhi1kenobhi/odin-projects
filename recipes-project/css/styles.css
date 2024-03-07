@@ -1,0 +1,36 @@
+body {
+    background-color: gold;
+    opacity: 70%;
+}
+
+.main-heading {
+    color: rgb(252, 61, 4);
+    font-size: large;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, 'Geneva', Verdana, sans-serif;
+    text-align: center;
+}
+
+.para-graph {
+    color: rgb(44, 21, 2);
+    font-size: small;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+}
+
+.list-class {
+    color: rgb(1, 155, 1);
+    font-size: small;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+}
+
+.sub-heading {
+    color: rgb(23,145,56);
+    font-size: medium;
+    font-weight: 400;
+    font-family: 'Segoe UI', Tahoma, 'Geneva', Verdana, sans-serif;
+    text-align: center;
+}
+
+.div-cont {
+    border-color: brown;
+}

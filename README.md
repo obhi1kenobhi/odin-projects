@@ -1,2 +1,2 @@
 # odin-projects
-Folder for all web development projects in odin project
+Folder for all web development projects related to The Odin Project

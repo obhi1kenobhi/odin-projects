@@ -5,14 +5,15 @@ body {
 
 .main-heading {
     color: #114232;
-    font-size: large;
-    font-weight: 600;
+    font-size: xx-large;
+    font-weight: 800;
     font-family: 'Segoe UI', Tahoma, 'Geneva', Verdana, sans-serif;
     text-align: center;
     margin-top: 12px;
     margin-left: auto;
     margin-right: auto;
     padding: 8px;
+    background-color: #FCDC2A;
 }
 
 .para-graph {
@@ -29,6 +30,7 @@ body {
     font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
     display: block;
     text-align: center;
+    padding: unset;
 }
 
 .list-items {
@@ -37,6 +39,9 @@ body {
     font-style: italic;
     font-weight: 500;
     margin: 12px 30px 12px 30px;
+    border: 2px solid;
+    border-color: darkgreen;
+    padding: 8px;
 }
 
 .sub-heading {
@@ -60,4 +65,6 @@ body {
     margin-left: auto;
     margin-right: auto;
     display: block;
+    width: 250px;
+    height: 250px;
 }

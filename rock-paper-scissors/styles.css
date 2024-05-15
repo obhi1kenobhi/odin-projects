@@ -1,0 +1,52 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#body-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#primary-buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#secondary-buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#restart{
+    display: none;
+    margin: 20px;
+}
+
+#choices {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#scores {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

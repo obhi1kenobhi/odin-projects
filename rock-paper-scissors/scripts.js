@@ -32,7 +32,7 @@ const playRound = (humanChoice, computerChoice) => {
         scorejudge(humanScore,computerScore);
     }
     else if(humanChoice === 'rock' && computerChoice === 'paper'){
-        resultRound.innerText = "You lose! paper beats rock";
+        resultRound.innerText = "Computer scores! paper beats rock";
         computerScore++;
         humanChoiceBoard.innerText = `You played: ${humanChoice}`;
         compuChoiceBoard.innerText = `Computer played: ${computerChoice}`;
@@ -41,7 +41,7 @@ const playRound = (humanChoice, computerChoice) => {
         scorejudge(humanScore,computerScore);
     }
     else if(humanChoice === 'paper' && computerChoice === 'scissors'){
-        resultRound.innerText = "You lose! scissors beats paper";
+        resultRound.innerText = "Computer scores! scissors beats paper";
         computerScore++;
         humanChoiceBoard.innerText = `You played: ${humanChoice}`;
         compuChoiceBoard.innerText = `Computer played: ${computerChoice}`;
@@ -50,7 +50,7 @@ const playRound = (humanChoice, computerChoice) => {
         scorejudge(humanScore,computerScore);
     }
     else if(humanChoice === 'scissors' && computerChoice === 'rock'){
-        resultRound.innerText = "You lose! rock beats scissors";
+        resultRound.innerText = "Computer scores! rock beats scissors";
         computerScore++;
         humanChoiceBoard.innerText = `You played: ${humanChoice}`;
         compuChoiceBoard.innerText = `Computer played: ${computerChoice}`;
@@ -59,7 +59,7 @@ const playRound = (humanChoice, computerChoice) => {
         scorejudge(humanScore,computerScore);
     }
     else if(humanChoice === 'rock' && computerChoice === 'scissors'){
-        resultRound.innerText = "You win! rock beats scissors";
+        resultRound.innerText = "You scored! rock beats scissors";
         humanScore++;
         humanChoiceBoard.innerText = `You played: ${humanChoice}`;
         compuChoiceBoard.innerText = `Computer played: ${computerChoice}`;
@@ -68,7 +68,7 @@ const playRound = (humanChoice, computerChoice) => {
         scorejudge(humanScore,computerScore);
     }
     else if(humanChoice === 'paper' && computerChoice === 'rock'){
-        resultRound.innerText = "You win! paper beats rock";
+        resultRound.innerText = "You scored! paper beats rock";
         humanScore++;
         humanChoiceBoard.innerText = `You played: ${humanChoice}`;
         compuChoiceBoard.innerText = `Computer played: ${computerChoice}`;
@@ -77,7 +77,7 @@ const playRound = (humanChoice, computerChoice) => {
         scorejudge(humanScore,computerScore);
     }
     else if(humanChoice === 'scissors' && computerChoice === 'paper'){
-        resultRound.innerText = "You win! scissors beats paper";
+        resultRound.innerText = "You scored! scissors beats paper";
         humanScore++;
         humanChoiceBoard.innerText = `You played: ${humanChoice}`;
         compuChoiceBoard.innerText = `Computer played: ${computerChoice}`;

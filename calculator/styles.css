@@ -10,6 +10,8 @@ input:focus {
     outline: none;
   }
 
+
+
 #top-title-part {
     display: flex;
     flex-direction: column;
@@ -45,7 +47,6 @@ input:focus {
 
 #formula-field {
     background-color: #ACEDFF;
-    color: #208EF5;
     font-size: smaller;
     border-width: 0;
     padding: 4px;
@@ -55,7 +56,6 @@ input:focus {
 
 #number-field {
     background-color: #ACEDFF;
-    color: #208EF5;
     font-size: x-large;
     border-width: 0;
     padding: 4px;
@@ -90,3 +90,15 @@ input:focus {
     
 
 }
+
+#history-part {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 5px solid rgb(105, 126, 187);
+    border-radius: 5px;
+    padding: 8px;
+    margin: 40px;
+}
+
+

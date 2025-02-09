@@ -35,8 +35,9 @@ const formula_f = document.getElementById("formula-field");
 const number_f = document.getElementById("number-field");
 
 // operand variables
-let number_1 = "";
-let number_2 = "";
+let number_1;
+let number_2;
+let number_3;
 
 // flag variable, operator checker and operation counter for detecting, counting operations and their completeness
 let flag_var = 0;
@@ -44,17 +45,19 @@ let operator_var = "";
 let operation_num = 0;
 
 // operations
-const addition = (number1, number2) => number1 + number2;
+const addition = (number1, number2) =>
+  parseFloat(number1) + parseFloat(number2);
 const subtraction = (number1, number2) => number1 - number2;
 const multiplication = (number1, number2) => number1 * number2;
-const division = (number1, number2) => number1 / number2;
+const division = (number1, number2) =>
+  number2 !== 0 ? number1 / number2 : "Cannot divide by zero";
 const percentageof = (number1, number2) => (number1 * number2) / 100;
 
 const inversecalc = (number) => 1 / number;
 const squarecalc = (number) => Math.pow(number, 2);
 const squarerootcalc = (number) => Math.pow(number, 1 / 2);
 
-// operations coterie object array - for use later
+// function for invoking operation functions based on operator
 
 const op_terie = (sign, number1, number2) => {
   oplist = {
@@ -62,9 +65,9 @@ const op_terie = (sign, number1, number2) => {
     "-": subtraction(number1, number2),
     "*": multiplication(number1, number2),
     "/": division(number1, number2),
-    "%": percentageof(number1, number2),
   };
-  return parseFloat(oplist[sign]);
+  opval = parseFloat(oplist[sign]);
+  return opval;
 };
 
 ///// debug 1: mended the sign-change button
@@ -175,21 +178,25 @@ const nu_ll = () => {
 const add_num = () => {
   operation_num += 1;
   if (number_f.value) {
+    ///// debug 3: chaining same operation instead of pressing equal each time.
+    ///// debug 4: chaining multiple operations instead of pressing equal each time
     if (operation_num > 1) {
-      number_1 = op_terie(operator_var, number_1, number_2);
-      console.log(operator_var, number_1, number_2);
+      number_2 = parseFloat(number_f.value);
+      number_3 = parseFloat(op_terie(operator_var, number_1, number_2));
+      number_f.value = parseFloat(number_3);
+      number_1 = number_f.value;
       number_f.value = "";
-      operator_var = "+";
       formula_f.value = "";
+      operator_var = "+";
+      formula_f.value += `${number_1} ${operator_var} `;
+    } else {
+      number_1 = parseFloat(number_f.value);
+      number_f.value = "";
+      formula_f.value = "";
+      operator_var = "+";
       formula_f.value += `${number_1} ${operator_var} `;
     }
-    number_1 = parseFloat(number_f.value);
-    number_f.value = "";
-    operator_var = "+";
-    formula_f.value = "";
-    formula_f.value += `${number_1} ${operator_var} `;
   }
-  console.log(operation_num);
 };
 
 ///// debug 2: make a negative number if the minus sign is pressed with a blank number field present, i.e. no operand 1
@@ -200,37 +207,67 @@ const sub_num = () => {
     number_f.value += `${operator_var}`;
     operation_num -= 1;
   } else {
-    number_1 = parseFloat(number_f.value);
-    number_f.value = "";
-    operator_var = "-";
-    formula_f.value = "";
-    formula_f.value += `${number_1} ${operator_var} `;
+    if (operation_num > 1) {
+      number_2 = parseFloat(number_f.value);
+      number_3 = parseFloat(op_terie(operator_var, number_1, number_2));
+      number_f.value = parseFloat(number_3);
+      number_1 = number_f.value;
+      number_f.value = "";
+      formula_f.value = "";
+      operator_var = "-";
+      formula_f.value += `${number_1} ${operator_var} `;
+    } else {
+      number_1 = parseFloat(number_f.value);
+      number_f.value = "";
+      formula_f.value = "";
+      operator_var = "-";
+      formula_f.value += `${number_1} ${operator_var} `;
+    }
   }
-  console.log(operation_num);
 };
 
 const mul_num = () => {
   operation_num += 1;
   if (number_f.value) {
-    number_1 = parseFloat(number_f.value);
-    number_f.value = "";
-    operator_var = "*";
-    formula_f.value = "";
-    formula_f.value += `${number_1} ${operator_var} `;
+    if (operation_num > 1) {
+      number_2 = parseFloat(number_f.value);
+      number_3 = parseFloat(op_terie(operator_var, number_1, number_2));
+      number_f.value = parseFloat(number_3);
+      number_1 = number_f.value;
+      number_f.value = "";
+      formula_f.value = "";
+      operator_var = "*";
+      formula_f.value += `${number_1} ${operator_var} `;
+    } else {
+      number_1 = parseFloat(number_f.value);
+      number_f.value = "";
+      formula_f.value = "";
+      operator_var = "*";
+      formula_f.value += `${number_1} ${operator_var} `;
+    }
   }
-  console.log(operation_num);
 };
 
 const div_num = () => {
   operation_num += 1;
   if (number_f.value) {
-    number_1 = parseFloat(number_f.value);
-    number_f.value = "";
-    operator_var = "/";
-    formula_f.value = "";
-    formula_f.value += `${number_1} ${operator_var} `;
+    if (operation_num > 1) {
+      number_2 = parseFloat(number_f.value);
+      number_3 = parseFloat(op_terie(operator_var, number_1, number_2));
+      number_f.value = parseFloat(number_3);
+      number_1 = number_f.value;
+      number_f.value = "";
+      formula_f.value = "";
+      operator_var = "/";
+      formula_f.value += `${number_1} ${operator_var} `;
+    } else {
+      number_1 = parseFloat(number_f.value);
+      number_f.value = "";
+      formula_f.value = "";
+      operator_var = "/";
+      formula_f.value += `${number_1} ${operator_var} `;
+    }
   }
-  console.log(operation_num);
 };
 
 const per_num = () => {
@@ -242,7 +279,6 @@ const per_num = () => {
     formula_f.value = "";
     formula_f.value += `${number_1} ${operator_var} of `;
   }
-  console.log(operation_num);
 };
 
 // calc functions with one number
@@ -331,10 +367,7 @@ const equal_func = () => {
         break;
       case "/":
         formula_f.value += `${number_2} = `;
-        number_f.value =
-          number_2 !== 0
-            ? parseFloat(division(number_1, number_2))
-            : "Cannot divide by zero";
+        number_f.value = parseFloat(division(number_1, number_2));
         operator_var = "";
         flag_var = 1;
         break;

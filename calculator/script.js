@@ -293,20 +293,17 @@ const sqrt_num = () => {
   operation_num += 1;
   formula_f.value = `(${number_f.value})^1/2 = `;
   number_f.value = parseFloat(squarerootcalc(number_f.value));
-  console.log(operation_num);
 };
 
 const sqr_num = () => {
   operation_num += 1;
   formula_f.value = `(${number_f.value})^2 = `;
   number_f.value = parseFloat(squarecalc(number_f.value));
-  console.log(operation_num);
 };
 
 const flip_sign = () => {
   operation_num += 1;
   number_f.value = parseFloat(signchangecalc(number_f.value));
-  console.log(operation_num);
 };
 
 const fact_calc = () => {
@@ -324,7 +321,6 @@ const fact_calc = () => {
   }
   //console.log(fact_value);
   number_f.value = parseFloat(fact_value);
-  console.log(operation_num);
 };
 
 // function to insert decimal point
@@ -337,7 +333,6 @@ const dec_pnt = () => {
   } else {
     number_f.value += ".";
   }
-  console.log(operation_num);
 };
 
 // equal button function
@@ -388,7 +383,6 @@ const equal_func = () => {
         : number_f.value;
     return;
   }
-  console.log(operation_num);
 };
 
 // clear function
@@ -402,8 +396,6 @@ const clr_scrn = () => {
 
 const bkspc = () => {
   number_f.value = number_f.value.slice(0, number_f.value.length - 1);
-  console.log(number_f.value);
-  console.log(operation_num);
 };
 
 // number button assignments
